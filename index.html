@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+       <ul>
+           <li><a href="#" class="active">Home</a></li>
+           <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <!-- <script src="script.js"></script> -->
+    <section>
+        <img src="./images/stars.png" id="stars">
+        <img src="./images/moon.png" id="moon">
+        <img src="./images/ocean.png" id="ocean">
+        <h2 id="text">Parallax scrolling effect</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="./images/front_tree.png" id="front_tree">
+   
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Parallax web scrolling is a design technique that involves the movement of background elements at a different speed than foreground elements as a user scrolls through a webpage. This creates an illusion of depth and adds a dynamic, three-dimensional effect to the overall design. Let's break down the key components of parallax web scrolling in more detail:
+           <br>
+           <br>
+            Layers: The concept of parallax scrolling relies on using multiple layers of elements, such as images, graphics, or other content, placed on top of each other. Each layer moves independently of the others, giving a sense of depth.
+            <br>
+            <br>
+            Background and Foreground Elements: Typically, the background elements, such as images or graphics, move at a slower rate than the foreground elements, like text or other content. This difference in movement speed is what creates the parallax effect.
+            <br>
+            <br>
+            Scrolling Interaction: As the user scrolls down or up the webpage, the layers move in response to the scrolling action. The relative speed of the layers creates the illusion that they are at different distances from the viewer, simulating a three-dimensional space.
+            <br>
+            <br>
+            CSS and JavaScript Implementation: Parallax scrolling is often implemented using a combination of CSS (Cascading Style Sheets) and JavaScript. CSS is used to set up the initial positioning and styling of the layers, while JavaScript is employed to handle the dynamic changes in position based on the user's scroll actions.
+            <br>
+            <br>
+            Performance Considerations: While parallax scrolling can enhance the visual appeal of a website, it's crucial to consider performance implications. Excessive use of high-resolution images or complex animations can lead to slower page loading times, potentially affecting the user experience, especially on devices with limited resources.
+            <br>
+            <br>
+            Responsive Design: Effective parallax scrolling design takes into account responsiveness for various screen sizes and devices. Ensuring that the parallax effect works well across desktops, laptops, tablets, and mobile devices is essential for a consistent user experience.
+            <br>
+            <br>
+            Purpose and Aesthetics: Parallax scrolling is often used to create visually stunning and immersive websites. It can be employed for storytelling, product showcases, or to simply make a website more engaging. However, it's essential to align the use of parallax with the overall goals and content of the website.
+            <br>
+            <br>
+            In summary, parallax web scrolling is a design technique that adds depth and visual interest to a webpage by moving background elements at a different speed than foreground elements during user scrolling. Careful consideration should be given to performance, responsiveness, and overall design goals when implementing parallax scrolling effects.
+            <br>
+            <br>
+        </p>
+    </div>
+    <script>{
+        let stars =document.getElementById('stars');
+        let moon =document.getElementById('moon');
+        let ocean=document.getElementById('ocean');
+        let text=document.getElementById('text');
+        let btn =document.getElementById('btn');
+        let front_tree =document.getElementById('front_tree');
+
+        window.addEventListener('scroll',function(){
+            let value= window.scrollY;
+            stars.style.left = value* 0.25 + 'px';
+            moon.style.top = value* 0.50 + 'px';
+            ocean.style.top = value* 0 + 'px';
+            front_tree.style.top = value* 0 + 'px';
+            text.style.marginRight = value* 4 + 'px';
+            btn.style.marginTop = value* 0.10 + 'px';
+            
+        })
+    }
+    </script>
+    
+</body>
+</html>
